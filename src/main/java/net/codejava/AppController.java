@@ -98,8 +98,9 @@ public class AppController {
 		BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 		String encodedPassword = passwordEncoder.encode(employee.getPassword());
 		employee.setPassword(encodedPassword);
-	
-		
+		Long num = (long) 5;
+		Project project = projectRepository.findAllByProjectid(num);
+	employee.setProject(project);
 		empRepo.save(employee);
 		
 		return "admin/register_success";}
