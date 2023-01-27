@@ -19,7 +19,7 @@ The main page where the user chooses between HR portal/Employee portal.<br/><br/
 ![Screenshot (122)](https://user-images.githubusercontent.com/86296356/215067601-ab10df42-c859-4398-baba-8c05b71018d9.png)
 The HR login page. Logging in using email and password. Passwords are protected by encryption in DB.<br/><br/>
 
-![Screenshot (123)](https://user-images.githubusercontent.com/86296356/215067872-83738670-6fa6-4a26-a915-c598db3a864c.png)
+![Screenshot (123)](https://user-images.githubusercontent.com/86296356/215067872-83738670-6fa6-4a26-a915-c598db3a864c.png)<br/>
 ![Screenshot (124)](https://user-images.githubusercontent.com/86296356/215067942-f057037c-d4c2-4c31-bdc1-eea4527b8b9e.png)
 The HR homepage has the HR features as shown and displays the complete list of employees at the bottom side of page.<br/><br/>
 
