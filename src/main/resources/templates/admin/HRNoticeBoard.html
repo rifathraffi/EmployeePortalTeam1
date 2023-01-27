@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="ISO-8859-1">
+	<title>HR Notice</title>
+	<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+	<script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<header>
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #A5A6BA;">
+
+  <li class="nav-item active" style="list-style-type:none">
+        <a class="nav-link"th:href="@{/admin/users}" style="color: white;">Home <span class="sr-only">(current)</span></a>
+      </li>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+ 
+      <li target="_top" class="nav-item dropdown" style="list-style-type:none">
+        <a class="nav-link dropdown-toggle" href="#" style="color: white;" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Options
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          
+          <a class="dropdown-item" href="javascript: document.logoutForm.submit()">Logout</a><form name="logoutForm" th:action="@{/admin/logout}" method="post" th:hidden="true">
+      <input hidden type="submit" value="Logout"/>
+</form> 
+      </li>
+     
+
+</nav>
+</header><br>
+
+	<div class="container text-center">
+		<h2 style="float: center;">HR Portal</h2>
+		<form th:action="@{/admin/newPost}" method="post" th:object="${post}">
+		<br>
+  <div class="form-group">
+    <h3><label "exampleFormControlInput1">Title</label><h3>
+    <input type="text" th:field="*{title}" class="form-control" id="title">
+  </div>
+
+  <div class="form-group">
+   <h3> <label for="exampleFormControlTextarea1">Description</label></h3>
+    <textarea class="form-control" th:field="*{description}" id="description" rows="3"></textarea>
+  </div>
+  <div>
+				<button type="submit" class="btn btn-primary">Post</button> 
+			</div>
+</form>
+
+	</div>
+</body>
+</html>

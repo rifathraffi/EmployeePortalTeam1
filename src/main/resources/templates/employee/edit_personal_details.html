@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+	<meta charset="ISO-8859-1">
+	<title>Edit Details</title>
+	<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+	<script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<header>
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #A4D7A0;">
+
+  <li class="nav-item active" style="list-style-type:none">
+        <a class="nav-link"th:href="@{/employee/home}" style="color: white;">Home <span class="sr-only">(current)</span></a>
+      </li>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+ 
+      <li target="_top" class="nav-item dropdown" style="list-style-type:none">
+        <a class="nav-link dropdown-toggle" href="#" style="color: white;" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Options
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" th:href="@{/employee/changepassword}">Change Password</a>
+          <a class="dropdown-item" href="javascript: document.logoutForm.submit()">Logout</a><form name="logoutForm" th:action="@{/employee/logout}" method="post" th:hidden="true">
+      <input hidden type="submit" value="Logout"/>
+</form> 
+      </li>
+     
+
+</nav>
+</header>
+
+<br>
+<div class="container text-center">
+	<div>
+		<form th:action="@{/admin/logout}" method="post">
+			<p>
+				Welcome <b>[[${#request.userPrincipal.principal.fullName}]]</b>
+			</p>
+			<input type="submit" value="Sign Out" />
+		</form>
+	</div>
+	
+	<div>
+	<p>First Name: <b>[[${#request.userPrincipal.principal.firstName}]]</b>
+	</p>
+	<p>Last Name: <b>[[${#request.userPrincipal.principal.lastName}]]</b></p>
+	<p>Employee Id: <b>[[${#request.userPrincipal.principal.id}]]</b>
+	</p>
+	<p>Email Id: <b>[[${#request.userPrincipal.principal.email}]]</b></p>
+	<br>
+	<hr>
+<form th:action="@{/employee/update_personal_details}"  
+			method="post" style="max-width: 600px; margin: 0 auto;">
+		<div class="m-3">
+			<div class="form-group row">
+				<label class="col-4 col-form-label">Address: </label>
+				<div class="col-8">
+					<input type="text" name="address" class="form-control" required />
+				</div>
+			</div>
+			
+			<div class="form-group row">
+				<label class="col-4 col-form-label">Phone: </label>
+				<div class="col-8">
+					<input type="text" name="phone" class="form-control" 
+							/>
+				</div>
+			</div>
+			
+			<div class="form-group row">
+				<label class="col-4 col-form-label">DOB: </label>
+				<div class="col-8">
+					<input type="date" name="dob" class="form-control" 
+							/>
+				</div>
+			</div>
+			
+						
+			<div>
+				<button type="submit" class="btn btn-primary">Submit</button> 
+			</div>
+		</div>
+		</form>	
+	
+	</div>
+	
+	
+
+</div>
+</body>
+</html>

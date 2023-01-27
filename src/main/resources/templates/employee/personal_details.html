@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+	<meta charset="ISO-8859-1">
+	<title>Personal Details</title>
+	<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+	<script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+	
+</head>
+<body>
+
+<header>
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #A4D7A0;">
+
+  <li class="nav-item active" style="list-style-type:none">
+        <a class="nav-link"th:href="@{/employee/home}" style="color: white;">Home <span class="sr-only">(current)</span></a>
+      </li>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+ 
+      <li target="_top" class="nav-item dropdown" style="list-style-type:none">
+        <a class="nav-link dropdown-toggle" href="#" style="color: white;" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Options
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" th:href="@{/employee/changepassword}">Change Password</a>
+          <a class="dropdown-item" href="javascript: document.logoutForm.submit()">Logout</a><form name="logoutForm" th:action="@{/employee/logout}" method="post" th:hidden="true">
+      <input hidden type="submit" value="Logout"/>
+</form> 
+      </li>
+     
+
+</nav>
+</header>
+
+<br>
+
+<h2><center>Personal Details</center></h2><br>
+	
+	<div class="container">
+	<p>First Name: <b>[[${#request.userPrincipal.principal.firstName}]]</b>
+	</p>
+	<p>Last Name: <b>[[${#request.userPrincipal.principal.lastName}]]</b></p>
+	<p>Employee Id: <b>[[${#request.userPrincipal.principal.id}]]</b>
+	</p>
+	<p>Email Id: <b>[[${#request.userPrincipal.principal.email}]]</b></p>
+	<br>
+	<hr>
+	<a class="btn btn-primary" th:href="@{/employee/editPersonalDetails}" role="button">Edit</a><br>
+	<br>
+	<p>Address: <b>[[${#request.userPrincipal.principal.address}]]</b>
+	</p>
+	<p>Phone: <b>[[${#request.userPrincipal.principal.phone}]]</b></p>
+	<p>Date of Birth: <b>[[${#request.userPrincipal.principal.DOB}]]</b>
+	</p>
+	
+	</div>
+	
+	
+
+</div>
+</body>
+</html>
