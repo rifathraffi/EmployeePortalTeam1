@@ -90,7 +90,7 @@ public class AppController {
 		
 		userRepo.save(user);
 		
-		return "register_success";
+		return "index";
 	}
 	
 	@PostMapping("/admin/new_emp_register")
