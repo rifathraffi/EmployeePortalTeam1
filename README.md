@@ -7,6 +7,10 @@ To run the project, create database employeeportal with the following tables:<br
 -->project -- Long projectid, String project_name, String client_name, Date end_date<br/><br/>
 -->users -- Long id, String email, String first_name, String last_name, String password<br/>
 
+Create a csv file containing project details as follows and import them to the "project" table:
+![image](https://user-images.githubusercontent.com/86296356/216672418-54e4d6a4-2163-4477-88b1-442164a591ea.png)
+(Please give default project as projectid 5)
+
 After creating these load a HR user to users table.<br/>
 (In index.html file the code has been written to register new Admin HR user)<br/>
 
